@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pi Camera Stream</title>
+
+<style>
+body { font-family: Arial; text-align:center; }
+button { padding:10px; margin:5px; font-size:16px; }
+img { border:2px solid black; }
+</style>
+
+</head>
+
+<body>
+
+<h2>Raspberry Pi Camera Stream</h2>
+
+<img id="stream" src="/video_feed" width="640">
+
+<br><br>
+
+<button onclick="play()">Play</button>
+<button onclick="pause()">Pause</button>
+<button onclick="capture()">Capture Image</button>
+<button onclick="download()">Download ZIP</button>
+
+<script>
+
+function play(){
+ fetch('/play')
+}
+
+function pause(){
+ fetch('/pause')
+}
+
+function capture(){
+ fetch('/capture')
+}
+
+function download(){
+ window.location='/download'
+}
+
+</script>
+
+</body>
+</html>
